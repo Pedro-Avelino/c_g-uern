@@ -1,5 +1,10 @@
 package Computação_grafica;
 
+/* AQUI NOS IMPORTS TEMOS O COLOR QUE VAI NOS PERMITIR ESCOLHER UMA COR
+ * A GRAPHICS QUE VAI NOS PERMITIR DESENHAR NA TELA
+ * A SCANNER QUE VAI NOS PERMITIR LER OS VALORES QUE VAMOS PASSAR PARA O PROGRAMA
+ * E O JFRAME QUE VAI NOS PERMITIR CRIAR A JANELA
+ */
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Scanner;
@@ -75,7 +80,7 @@ public class Triangulo extends JFrame {
 		larg = t.getLarg();
 
 		/* DEFINIR A COR DO DESENHO */
-		g.setColor(Color.BLACK);
+		g.setColor(Color.RED);
 		/*
 		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
 		 * ABAIXO
@@ -114,7 +119,7 @@ public class Triangulo extends JFrame {
 		larg = t.getLarg();
 
 		/* DEFINIR A COR DO DESENHO */
-		g.setColor(Color.BLACK);
+		g.setColor(Color.RED);
 		/*
 		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
 		 * ABAIXO ONDE ELE RECEBE OS MESMOS VALORES DA EQUAÇÃO DIFERENCIAL
@@ -143,7 +148,7 @@ public class Triangulo extends JFrame {
 		larg = t.getLarg();
 
 		/* DEFINIR A COR DO DESENHO */
-		g.setColor(Color.BLACK);
+		g.setColor(Color.RED);
 		/*
 		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
 		 * ABAIXO ONDE ELE RECEBE OS MESMOS VALORES DA EQUAÇÃO DIFERENCIAL
@@ -172,7 +177,7 @@ public class Triangulo extends JFrame {
 		larg = t.getLarg();
 
 		/* DEFINIR A COR DO DESENHO */
-		g.setColor(Color.BLACK);
+		g.setColor(Color.RED);
 		/*
 		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
 		 * ABAIXO ONDE ELE RECEBE OS MESMOS VALORES DA EQUAÇÃO DIFERENCIAL
@@ -196,7 +201,7 @@ public class Triangulo extends JFrame {
 		auxyf = -yf;
 
 		/* DEFINIR A COR DO DESENHO */
-		g.setColor(Color.BLACK);
+		g.setColor(Color.RED);
 		/*
 		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
 		 * ABAIXO ONDE ELE RECEBE OS MESMOS VALORES DA EQUAÇÃO DIFERENCIAL
@@ -224,7 +229,7 @@ public class Triangulo extends JFrame {
 		larg = t.getLarg();
 
 		/* DEFINIR A COR DO DESENHO */
-		g.setColor(Color.BLACK);
+		g.setColor(Color.RED);
 		/*
 		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
 		 * ABAIXO ONDE ELE RECEBE OS MESMOS VALORES DA EQUAÇÃO DIFERENCIAL
@@ -255,7 +260,7 @@ public class Triangulo extends JFrame {
 		larg = t.getLarg();
 
 		/* DEFINIR A COR DO DESENHO */
-		g.setColor(Color.BLACK);
+		g.setColor(Color.RED);
 		/*
 		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
 		 * ABAIXO ONDE ELE RECEBE OS MESMOS VALORES DA EQUAÇÃO DIFERENCIAL
