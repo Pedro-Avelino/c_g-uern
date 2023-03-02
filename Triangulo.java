@@ -45,15 +45,6 @@ public class Triangulo extends JFrame {
 		this.larg = larg;
 	}
 
-	public void limpar_tela(Triangulo t) {
-
-		/* PEGA O TAMANHO DA TELA DEFINIDO ANTERIORMENTE */
-		Graphics g = getGraphics();
-		/* APAGA TODAS AS INTERAÇÕES FEITAS NA TELA */
-		g.clearRect(0, 0, t.getAlt(), t.getLarg());
-
-	}
-
 	/*
 	 * AQUI TEMOS A PRIMEIRA FUNÇÃO QUE É PARA DESENHAR O TRIANGULO, NELA NOS
 	 * RECEBEMOS
@@ -288,8 +279,7 @@ public class Triangulo extends JFrame {
 
 			System.out.printf("[0] Desenha triangulo \n" +
 					"[1] Escala \n" + "[2] Rotação \n" + "[3] Translatação \n" +
-					"[4] Espelhamento \n" + "[5] Escala Fixa \n" + "[6] Rotação Fixa \n" + "[7] Sair \n"
-					+ "[8] Limpar Tela \n");
+					"[4] Espelhamento \n" + "[5] Escala Fixa \n" + "[6] Rotação Fixa \n" + "[7] Sair \n");
 
 			opcao = input.nextInt();
 
@@ -357,9 +347,6 @@ public class Triangulo extends JFrame {
 
 			if (opcao == 7) {
 				System.exit(0);
-			}
-			if (opcao == 8) {
-				t.limpar_tela();
 			}
 		}
 	}
