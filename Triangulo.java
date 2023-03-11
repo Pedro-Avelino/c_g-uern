@@ -1,34 +1,22 @@
 package Computação_grafica;
 
-/* AQUI NOS IMPORTS TEMOS O COLOR QUE VAI NOS PERMITIR ESCOLHER UMA COR
- * A GRAPHICS QUE VAI NOS PERMITIR DESENHAR NA TELA
- * A SCANNER QUE VAI NOS PERMITIR LER OS VALORES QUE VAMOS PASSAR PARA O PROGRAMA
- * E O JFRAME QUE VAI NOS PERMITIR CRIAR A JANELA
- */
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Scanner;
 import javax.swing.JFrame;
 
-/*A JANELA É CRIADA PELO JFRAME */
 public class Triangulo extends JFrame {
 
 	int alt, larg;
 	Graphics g;
 
-	/*
-	 * AQUI TEMOS A CLASSE TRIANGULO, ELA TEM O CONSTRUTOR PADRÃO DELA QUE RECEBE A
-	 * ALTURA E A LARGURA QUE É
-	 * REFERENTE A JANELA
-	 */
 	public Triangulo(int alt, int larg) {
-		setSize(larg, alt);/* DEFINE O TAMANHO DA TELA */
-		setLocationRelativeTo(null);/* CENTRALIZA A TELA COM BASE NO TAMANHO DEFINIDO */
-		setDefaultCloseOperation(EXIT_ON_CLOSE);/* FECHA O PROGRAMA AO CLICAR EM SAIR NO JFRAME */
-		setVisible(true);/* PERMITIR A VISUALIZAÇÃO */
+		setSize(larg, alt);
+		setLocationRelativeTo(null);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setVisible(true);
 	}
 
-	/* AQUI TEMOS OS GETTERS E SETTERS SÓ PARA ALTERAR OS PARAMETROS */
 	public int getAlt() {
 		return alt;
 	}
@@ -45,16 +33,8 @@ public class Triangulo extends JFrame {
 		this.larg = larg;
 	}
 
-	/*
-	 * AQUI TEMOS A PRIMEIRA FUNÇÃO QUE É PARA DESENHAR O TRIANGULO, NELA NOS
-	 * RECEBEMOS
-	 * OS PARAMETROS INICIAIS DO NOSSO PLANO CARTESIANO QUE É O X0, XF, Y0, YF
-	 * E UM TRIANGULO T QUE É O OBJETO QUE VAI DEFINIR A ALTURA E A LARGURA DA NOSSA
-	 * TELA
-	 */
 	public void equacao_diferecial(int x0, int xf, int y0, int yf, Triangulo t) {
 
-		/* AQUI PEGAMOS A RESOLUÇÃO DEFINIDA PELO CONSTRUTOR */
 		Graphics g = getGraphics();
 		int auxx0, auxxf, auxy0, auxyf, alt, larg;
 
@@ -62,38 +42,19 @@ public class Triangulo extends JFrame {
 		auxxf = xf;
 		auxy0 = y0;
 		auxyf = yf;
-		/*
-		 * AQUI DEFINIMOS A CENTRALIZAÇÃO DO NOSSO PONTO DE ORIGEM PORQUE PADRÃO ELE VEM
-		 * NO CANTO SUPERIOR
-		 * UTILIZAMOS A ALTURA E A LARGURA PARA DEFINIR O CENTRO DA TELA
-		 */
+
 		alt = t.getAlt();
 		larg = t.getLarg();
 
-		/* DEFINIR A COR DO DESENHO */
 		g.setColor(Color.RED);
-		/*
-		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
-		 * ABAIXO
-		 */
+
 		g.drawLine(Math.round(auxx0 + alt / 2), Math.round(larg / 2 - auxy0), Math.round(auxxf + alt / 2),
 				Math.round(larg / 2 - auxyf));
 		;
-		/*
-		 * RESUMINDO AQUI NA PRIMEIRA EQUAÇÃO PASSAMOS OS PARAMETROS, AS VARIAVEIS
-		 * RECEBEM ESSES PARAMETROS
-		 * QUE DEFINIMOS, E O VALORES DE X0,Y0 E XF,YF
-		 */
 	}
 
-	/*
-	 * AQUI NO DE ESCALA VAI SER BASICAMENTE A MESMA COISA DO DE CIMA, SÓ QUE AQUI
-	 * USAMOS O CE QUE É O COEFICIENTE ESCALAR E SUBSTITUIMOS A FORMULA ONDE PEGAMOS
-	 * OS VALORES E MULTIPLICAMOS POR ESSE COEFICIENTE
-	 */
 	public void Escala(int x0, int xf, int y0, int yf, Triangulo t, int ce) {
 
-		/* AQUI PEGAMOS A RESOLUÇÃO DEFINIDA PELO CONSTRUTOR */
 		Graphics g = getGraphics();
 		int auxx0, auxxf, auxy0, auxyf, alt, larg, auxce;
 
@@ -101,33 +62,18 @@ public class Triangulo extends JFrame {
 		auxxf = xf * ce;
 		auxy0 = y0 * ce;
 		auxyf = yf * ce;
-		/*
-		 * AQUI DEFINIMOS A CENTRALIZAÇÃO DO NOSSO PONTO DE ORIGEM PORQUE PADRÃO ELE VEM
-		 * NO CANTO SUPERIOR
-		 * UTILIZAMOS A ALTURA E A LARGURA PARA DEFINIR O CENTRO DA TELA
-		 */
+
 		alt = t.getAlt();
 		larg = t.getLarg();
 
-		/* DEFINIR A COR DO DESENHO */
 		g.setColor(Color.RED);
-		/*
-		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
-		 * ABAIXO ONDE ELE RECEBE OS MESMOS VALORES DA EQUAÇÃO DIFERENCIAL
-		 */
+
 		g.drawLine(Math.round(auxx0 + alt / 2), Math.round(larg / 2 - auxy0), Math.round(auxxf + alt / 2),
 				Math.round(larg / 2 - auxyf));
 		;
 	}
 
-	/*
-	 * A ROTAÇÃO SE DIFERE PORQUE RECEBE UM ANGULO E ESSE ANGULO É SUBSTITUIDO PELA
-	 * FORMA MATEMATICA QUE VAI SER O X MULTIPLICANDO O SEN E O COS DO ANGULO MENOS
-	 * E MAIS O Y
-	 * VEZES O SEN E O COS DO ANGULO
-	 */
 	public void Rotacao(int x0, int xf, int y0, int yf, Triangulo t, double angulo) {
-		/* AQUI PEGAMOS A RESOLUÇÃO DEFINIDA PELO CONSTRUTOR */
 		Graphics g = getGraphics();
 		int auxx0, auxxf, auxy0, auxyf, alt, larg;
 
@@ -138,25 +84,14 @@ public class Triangulo extends JFrame {
 		alt = t.getAlt();
 		larg = t.getLarg();
 
-		/* DEFINIR A COR DO DESENHO */
 		g.setColor(Color.RED);
-		/*
-		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
-		 * ABAIXO ONDE ELE RECEBE OS MESMOS VALORES DA EQUAÇÃO DIFERENCIAL
-		 */
+
 		g.drawLine(Math.round(auxx0 + alt / 2), Math.round(larg / 2 - auxy0), Math.round(auxxf + alt / 2),
 				Math.round(larg / 2 - auxyf));
 		;
 	}
 
-	/*
-	 * BASICAMENTE AQUI NA TRANSLAÇÃO VAMOS RECEBER DE DIFERENTE UM TX E UM TY QUE É
-	 * O
-	 * COEFICIENTE DE TRANSLAÇÃO, QUE VÃO SER OS VALORES SOMADOS NAS VARIAVEIS
-	 * ABAIXO
-	 */
 	public void Translatacao(int x0, int xf, int y0, int yf, Triangulo t, int tx, int ty) {
-		/* AQUI PEGAMOS A RESOLUÇÃO DEFINIDA PELO CONSTRUTOR */
 		Graphics g = getGraphics();
 		int auxx0, auxxf, auxy0, auxyf, alt, larg, auxce;
 
@@ -167,20 +102,14 @@ public class Triangulo extends JFrame {
 		alt = t.getAlt();
 		larg = t.getLarg();
 
-		/* DEFINIR A COR DO DESENHO */
 		g.setColor(Color.RED);
-		/*
-		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
-		 * ABAIXO ONDE ELE RECEBE OS MESMOS VALORES DA EQUAÇÃO DIFERENCIAL
-		 */
+
 		g.drawLine(Math.round(auxx0 + alt / 2), Math.round(larg / 2 - auxy0), Math.round(auxxf + alt / 2),
 				Math.round(larg / 2 - auxyf));
 		;
 	}
 
-	/* O ESPELHAMENTO APENAS SUBSTITUIMOS O VALOR DE Y0 E YF PARA NEGATIVO */
 	public void espelhamento(int x0, int xf, int y0, int yf, Triangulo t) {
-		/* AQUI PEGAMOS A RESOLUÇÃO DEFINIDA PELO CONSTRUTOR */
 		Graphics g = getGraphics();
 		int auxx0, auxxf, auxy0, auxyf, alt, larg;
 
@@ -191,24 +120,15 @@ public class Triangulo extends JFrame {
 		auxy0 = -y0;
 		auxyf = -yf;
 
-		/* DEFINIR A COR DO DESENHO */
 		g.setColor(Color.RED);
-		/*
-		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
-		 * ABAIXO ONDE ELE RECEBE OS MESMOS VALORES DA EQUAÇÃO DIFERENCIAL
-		 */
+
 		g.drawLine(Math.round(auxx0 + alt / 2), Math.round(larg / 2 - auxy0), Math.round(auxxf + alt / 2),
 				Math.round(larg / 2 - auxyf));
 		;
 	}
 
-	/*
-	 * A ESCALA FIXA FUNCIONA DA MESMA FORMA QUE A ESCALA SÓ QUE TEMOS UM PONTO FIXO
-	 * NO CASO NAS COORDENADAS QUE VAI SER 55 E 65
-	 */
 	public void Escala_fixa(int x0, int xf, int y0, int yf, Triangulo t, int ce) {
 
-		/* AQUI PEGAMOS A RESOLUÇÃO DEFINIDA PELO CONSTRUTOR */
 		Graphics g = getGraphics();
 		int auxx0, auxxf, auxy0, auxyf, alt, larg, auxce;
 
@@ -219,23 +139,14 @@ public class Triangulo extends JFrame {
 		alt = t.getAlt();
 		larg = t.getLarg();
 
-		/* DEFINIR A COR DO DESENHO */
 		g.setColor(Color.RED);
-		/*
-		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
-		 * ABAIXO ONDE ELE RECEBE OS MESMOS VALORES DA EQUAÇÃO DIFERENCIAL
-		 */
+
 		g.drawLine(Math.round(auxx0 + alt / 2 + 55), Math.round(larg / 2 - auxy0 + 65),
 				Math.round(auxxf + alt / 2 + 55), Math.round(larg / 2 - auxyf + 65));
 		;
 	}
 
-	/*
-	 * A ROTAÇÃO FIXA FUNCIONA DA MESMA MANEIRA DA ROTAÇÃO SÓ QUE USAMOS COORDENADAS
-	 * FIXAS QUE SÃO 55 E 65
-	 */
 	public void Rotacao_fixa(int x0, int xf, int y0, int yf, Triangulo t, double angulo) {
-		/* AQUI PEGAMOS A RESOLUÇÃO DEFINIDA PELO CONSTRUTOR */
 		Graphics g = getGraphics();
 		int auxx0, auxxf, auxy0, auxyf, alt, larg;
 
@@ -250,12 +161,8 @@ public class Triangulo extends JFrame {
 		alt = t.getAlt();
 		larg = t.getLarg();
 
-		/* DEFINIR A COR DO DESENHO */
 		g.setColor(Color.RED);
-		/*
-		 * DESENHA A LINHA, JÁ CENTRALIZANDO O DESENHO NA TELA COM O CALCULO FEITO
-		 * ABAIXO ONDE ELE RECEBE OS MESMOS VALORES DA EQUAÇÃO DIFERENCIAL
-		 */
+
 		g.drawLine(Math.round(auxx0 + alt / 2), Math.round(larg / 2 - auxy0), Math.round(auxxf + alt / 2),
 				Math.round(larg / 2 - auxyf));
 		;
@@ -269,12 +176,10 @@ public class Triangulo extends JFrame {
 		System.out.println("INFORME A ALTURA QUE VOCÊ DESEJA USAR");
 		int alt = input.nextInt();
 
-		/* INICIALIZA UM NOVO OBJETO DESENHAR */
 		Triangulo t = new Triangulo(alt, larg);
 		t.setAlt(alt);
 		t.setLarg(larg);
 
-		/* AQUI TEMOS AQUELE MENU PADRÃO */
 		while (true) {
 
 			System.out.printf("[0] Desenha triangulo \n" +
