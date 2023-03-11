@@ -36,11 +36,8 @@ public class Circulo extends JFrame {
 
 	public void limpar_tela(Circulo c) {
 
-		Graphics g = getGraphics();/* pega a resolução definida pelo costrutor */
-		g.clearRect(0, 0, c.getLarg(), c.getAlt());/*
-													 * função resevada da bliblioteca
-													 * que limpa a tela
-													 */
+		Graphics g = getGraphics();
+		g.clearRect(0, 0, c.getLarg(), c.getAlt());
 
 	}
 
