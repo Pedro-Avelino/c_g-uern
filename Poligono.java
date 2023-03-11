@@ -12,9 +12,9 @@ public class Poligono extends JFrame {
 	int alt, larg;
 	Graphics g;
 
-	private int[] Pontos_x = { 200, 200, 250, 270, 300 };
-	private int[] Pontos_y = { 300, 200, 250, 200, 300 };
-	private int Pontos_n = 5;
+	private int[] Pontos_x = { 138, 116, 132, 180, 430, 420 };
+	private int[] Pontos_y = { 106, 350, 350, 27, 130, 280 };
+	private int Pontos_n = 6;
 
 	public Poligono(int alt, int larg) {
 		setSize(larg, alt);
